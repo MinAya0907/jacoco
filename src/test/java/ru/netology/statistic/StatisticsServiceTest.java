@@ -4,18 +4,30 @@ import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.Assertions;
 
-    public class StatisticsServiceTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-        @Test
-        void findMax() {
-            StatisticsService service = new StatisticsService();
+public class StatisticsServiceTest {
 
-            long[] incomesInBillions = {12, 5, 8, 4, 5, 3, 8, 6, 11, 11, 12};
-            long expected = 12;
+    @Test
+    void findMax() {
+        StatisticsService service = new StatisticsService();
 
-            long actual = service.findMax(incomesInBillions);
+        long[] incomesInBillions = {12, 5, 8, 4, 5, 3, 8, 6, 11, 11, 12};
+        long expected = 12;
 
-            Assertions.assertEquals(expected, actual);
-        }
+        long actual = service.findMax(incomesInBillions);
+
+        assertEquals(expected, actual);
     }
+
+    @Test
+    void find() {
+        StatisticsService service = new StatisticsService();
+        long[] incomesInBillions = {10, 5, 8, 4, 5, 3, 8, 6, 11, 11, 12};
+        long expected = 12;
+        long actual = service.findMax(incomesInBillions);
+        assertEquals(expected, actual);
+
+    }
+}
 
